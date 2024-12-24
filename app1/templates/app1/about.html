@@ -1,0 +1,211 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f9f9;
+        padding: 60px 20px;
+        border-top: 5px solid #006400;
+        border-left: 4px solid #006400;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-content {
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 2.8rem;
+        color: #006400;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        color: #444;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .learn-more-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #006400;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .learn-more-button:hover {
+        background-color: #228B22;
+    }
+
+    .about-image {
+        max-width: 50%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .about-section {
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        .about-content, .about-image {
+            max-width: 100%;
+            padding: 10px;
+        }
+    }
+</style>
+
+<div class="about-section">
+    <div class="about-image">
+        <img src="{% static 'images/bannerrr.webp' %}" alt="Ayurvedic Hospital Image">
+    </div>
+    <div class="about-content">
+        <h2>Welcome to [Your Ayurvedic Hospital Name]</h2>
+        <p>
+            At [Your Ayurvedic Hospital Name], we blend ancient Ayurvedic wisdom with modern healthcare practices to provide holistic treatments that nurture your body, mind, and soul. Our hospital stands as a beacon of health and harmony, established with a mission to promote well-being through natural and sustainable methods.
+        </p>
+        <p>
+            Our experienced Ayurvedic practitioners offer personalized treatments, including Panchakarma therapy, herbal remedies, and lifestyle counseling. Whether you're seeking relief from chronic ailments or preventive care, our approach ensures a transformative healing experience.
+        </p>
+        <p>
+            Experience the serenity of our facility, where every detail—from our tranquil environment to our compassionate care—reflects the essence of Ayurveda. Join us in your journey toward holistic health and discover the power of ancient healing traditions.
+        </p>
+    </div>
+</div>
+<style>
+    .why-choose-us-section {
+        background-color: #f9f9f9;
+        padding: 80px 40px;
+        border-top: 6px solid #228B22;
+        border-left: 4px solid #228B22;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .why-choose-us-section h2 {
+        font-size: 3rem;
+        color: #228B22;
+        margin-bottom: 30px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .why-choose-us-section p {
+        font-size: 1.2rem;
+        color: #333;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .feature-card {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-width: 320px;
+        flex-grow: 1;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-card img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.8rem;
+        color: #006400;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .features-list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
+<div class="why-choose-us-section">
+    <h2>Why Choose Us?</h2>
+    <p>
+        At [Your Ayurvedic Hospital Name], we are committed to offering the finest Ayurvedic care with compassion and expertise. Here’s why our patients trust us:
+    </p>
+    <div class="features-list">
+        <div class="feature-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Experienced Practitioners">
+            <h3>Experienced Practitioners</h3>
+            <p>
+                Our team of certified Ayurvedic doctors brings decades of expertise to ensure the highest level of care.
+            </p>
+        </div>
+        <div class="feature-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Customized Therapies">
+            <h3>Customized Therapies</h3>
+            <p>
+                We offer personalized treatment plans tailored to your unique needs and health goals.
+            </p>
+        </div>
+        <div class="feature-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Holistic Approach">
+            <h3>Holistic Approach</h3>
+            <p>
+                Our treatments address physical, mental, and spiritual well-being for complete healing.
+            </p>
+        </div>
+        <div class="feature-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Serene Environment">
+            <h3>Serene Environment</h3>
+            <p>
+                Experience tranquility and rejuvenation in our state-of-the-art Ayurvedic facility.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

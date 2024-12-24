@@ -1,0 +1,146 @@
+{% extends 'app1/base.html' %}
+{% load static %} 
+{% block content %}
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="section-title">Our Ayurvedic Treatments Gallery</h2>
+      <p class="section-description">Explore the holistic healing environment of our Ayurvedic Hospital through these images.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="{% static 'images/image1.jpg' %}" alt="Ayurvedic Consultation" class="gallery-img">
+          <div class="gallery-overlay">
+            <h3>Ayurvedic Consultation</h3>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="{% static 'images/image1.jpg' %}" alt="Herbal Medicine Preparation" class="gallery-img">
+          <div class="gallery-overlay">
+            <h3>Herbal Medicine Preparation</h3>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="{% static 'images/image1.jpg' %}" alt="Therapeutic Massages" class="gallery-img">
+          <div class="gallery-overlay">
+            <h3>Therapeutic Massages</h3>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+          <div class="gallery-overlay">
+            <h3>Yoga and Meditation</h3>
+          </div>
+        </div>
+        <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="{% static 'images/image1.jpg' %}" alt="Yoga and Meditation" class="gallery-img">
+            <div class="gallery-overlay">
+              <h3>Yoga and Meditation</h3>
+            </div>
+          </div>
+        
+        <!-- Add more gallery items as needed -->
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .gallery-section {
+      padding: 50px 0;
+      background-color: #f7f7f7;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    .section-description {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #7f8c8d;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .gallery-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.1);
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    .gallery-overlay h3 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+
+{% endblock %}

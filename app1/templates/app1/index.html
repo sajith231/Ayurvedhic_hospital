@@ -1,0 +1,553 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .carousel-inner {
+        max-height: 660px;
+    }
+    
+    .carousel-item img {
+        filter: brightness(0.7);
+    }
+    
+    .carousel-caption {
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: initial;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .carousel-caption p {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    
+    @media (max-width: 768px) {
+        .carousel-caption h1 {
+            font-size: 2rem;
+        }
+        .carousel-caption p {
+            font-size: 1rem;
+        }
+    }
+</style>
+<div id="heroCarousel" class="carousel slide" style="position: relative;z-index: -1;" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <video autoplay muted loop class="service-img">
+                <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption">
+                <h1>Welcome to Healing Through Tradition</h1>
+                <p>Experience the wisdom of ancient Ayurvedic healing in a modern setting</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <video autoplay muted loop class="service-img">
+                <source src="{% static 'videos/video2.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption">
+                <h1>Natural Healing Solutions</h1>
+                <p>Holistic treatments tailored to your unique constitution</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <video autoplay muted loop class="service-img">
+                <source src="{% static 'videos/video3.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption">
+                <h1>Natural Healing Solutions</h1>
+                <p>Holistic treatments tailored to your unique constitution</p>
+            </div>
+        </div>
+        
+    </div>
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+    </button> -->
+</div>
+<div data-aos="fade-up">
+<style>
+    .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f9f9;
+        padding: 60px 20px;
+        border-top: 5px solid #006400; /* Thicker border */
+        border-left: 4px solid #006400; /* Adding left border for balance */
+        border-radius: 15px; /* Rounded corners for a softer look */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    .about-content {
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 2.8rem;
+        color: #006400;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        color: #444;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .learn-more-button {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #006400;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .learn-more-button:hover {
+        background-color: #228B22;
+    }
+
+    .about-image {
+        max-width: 50%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .about-section {
+            flex-direction: column;
+            border-radius: 10px; /* Rounded corners on smaller screens */
+        }
+
+        .about-content, .about-image {
+            max-width: 100%;
+            padding: 10px;
+        }
+    }
+</style>
+
+<div class="about-section">
+    <div class="about-image">
+        <img src="{% static 'images/aboutus.webp' %}" alt="Ayurvedic Hospital Image">
+    </div>
+    <div class="about-content">
+        <h2>Welcome to [Your Ayurvedic Hospital Name]</h2>
+        <p>
+            At [Your Ayurvedic Hospital Name], we blend ancient Ayurvedic wisdom with modern healthcare practices to provide holistic treatments that nurture your body, mind, and soul. Our hospital stands as a beacon of health and harmony, established with a mission to promote well-being through natural and sustainable methods.
+        </p>
+        <p>
+            Our experienced Ayurvedic practitioners offer personalized treatments, including Panchakarma therapy, herbal remedies, and lifestyle counseling. Whether you're seeking relief from chronic ailments or preventive care, our approach ensures a transformative healing experience.
+        </p>
+        <p>
+            Experience the serenity of our facility, where every detail—from our tranquil environment to our compassionate care—reflects the essence of Ayurveda. Join us in your journey toward holistic health and discover the power of ancient healing traditions.
+        </p>
+        <a href="about.html" class="learn-more-button">Learn More</a>
+    </div>
+</div>
+</div>
+<div data-aos="fade-up">
+<style>
+    .our-services {
+    /* background-color: #f4f4f4; */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.service-title {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #006400;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.service-link:hover {
+    background-color: #228B22;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+</style>
+<div class="our-services" style="position: relative;">
+    <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;z-index: -1;">
+        <img src="{% static 'images/image1.jpg' %}" alt="Panchakarma Therapy" class="service-img" style="width: 100%;height: 100%;object-fit: cover;">
+    </div>
+    
+    <h1 style="display: flex;justify-content: center;">Our Services</h1>
+    <div class="service-container">
+        <div class="service-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Panchakarma Therapy" class="service-img">
+            <h3 class="service-title">Panchakarma Therapy</h3>
+            <p class="service-description">
+                A traditional Ayurvedic detoxification therapy that cleanses and rejuvenates your body, mind, and spirit.
+            </p>
+            <a href="panchakarma.html" class="service-link">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Herbal Medicine" class="service-img">
+            <h3 class="service-title">Herbal Medicine</h3>
+            <p class="service-description">
+                Personalized herbal remedies that promote health, balance, and vitality using natural Ayurvedic ingredients.
+            </p>
+            <a href="herbal-medicine.html" class="service-link">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Lifestyle Counseling" class="service-img">
+            <h3 class="service-title">Lifestyle Counseling</h3>
+            <p class="service-description">
+                Guidance on diet, exercise, and mindfulness practices that harmonize with your unique constitution for optimal wellness.
+            </p>
+            <a href="lifestyle-counseling.html" class="service-link">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="{% static 'images/bannerrr.webp' %}" alt="Lifestyle Counseling" class="service-img">
+            <h3 class="service-title">Lifestyle Counseling</h3>
+            <p class="service-description">
+                Guidance on diet, exercise, and mindfulness practices that harmonize with your unique constitution for optimal wellness.
+            </p>
+            <a href="lifestyle-counseling.html" class="service-link">Learn More</a>
+        </div>
+    </div>
+</div>
+</div>
+<div data-aos="fade-up">
+<style>
+    .testimonial-section {
+        background-color: #f9f9f9;
+        padding: 60px 20px;
+        text-align: center;
+        border-top: 5px solid #006400;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-section h2 {
+        font-size: 2.5rem;
+        color: #006400;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    .testimonial-carousel {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        max-width: 350px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        border: 3px solid #006400;
+    }
+
+    .testimonial-card h3 {
+        font-size: 1.5rem;
+        color: #006400;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .testimonial-card p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .testimonial-section h2 {
+            font-size: 2rem;
+        }
+
+        .testimonial-card {
+            max-width: 100%;
+        }
+    }
+</style>
+
+<div class="testimonial-section">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-carousel">
+        <div class="testimonial-card">
+            <img src="{% static 'images/aboutus.webp' %}" alt="Client Photo">
+            <h3>John Doe</h3>
+            <p>
+                "The Ayurvedic treatments here transformed my life. The staff is incredibly knowledgeable, and the environment is so calming!"
+            </p>
+        </div>
+        <div class="testimonial-card">
+            <img src="{% static 'images/aboutus.webp' %}" alt="Client Photo">
+            <h3>Jane Smith</h3>
+            <p>
+                "I can't thank [Your Ayurvedic Hospital Name] enough for their care and expertise. I feel rejuvenated and healthier than ever."
+            </p>
+        </div>
+        <div class="testimonial-card">
+            <img src="{% static 'images/aboutus.webp' %}" alt="Client Photo">
+            <h3>Michael Brown</h3>
+            <p>
+                "A truly holistic approach to health and well-being. The Panchakarma therapy was a game-changer for me."
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+<style>
+    .contactus-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.contactus-section h2 {
+    font-size: 2.5rem;
+    color: #006400;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #444;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.contact-form button {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #228B22;
+}
+
+.contact-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h5 {
+    font-size: 1.3rem;
+    color: #006400;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.contact-info a {
+    color: #006400;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #228B22;
+}
+
+.map-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .contact-form, .contact-info {
+        margin-bottom: 30px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+}
+
+</style>
+<div data-aos="fade-up">
+<div class="contactus-section">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-md-6 contact-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="col-md-6 contact-info">
+                <h2>Get in Touch</h2>
+                <p>We are here to assist you with any inquiries or concerns. Feel free to contact us using the information below or the form.</p>
+                
+                <div class="contact-item">
+                    <h5>Email</h5>
+                    <p><a href="mailto:info@ayurvedahospital.com">info@ayurvedahospital.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h5>Phone</h5>
+                    <p><a href="tel:+1234567890">+1 234 567 890</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h5>Location</h5>
+                    <p>123 Ayurvedic Street, Wellness City, Country</p>
+                    <!-- Embedded Google Map -->
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
