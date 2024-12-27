@@ -27,7 +27,7 @@
     <style>
       /* Custom Styles */
       .green-bg {
-          background-color: rgb(49, 86, 49);
+          background-color: whitesmoke;
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
           position: sticky;
           top: 0;
@@ -35,24 +35,20 @@
       }
   
       .green-bg .navbar-brand {
-          color: white !important;
+          color: green !important;
           font-size: 1.5rem;
           font-weight: 700;
           letter-spacing: 1px;
       }
   
       .green-bg .navbar-toggler {
-          border-color: white;
-      }
-  
-      .green-bg .navbar-toggler-icon {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFF' viewBox='0 0 30 30'%3E%3Cpath stroke='none' d='M0 0h30v30H0z'/%3E%3Cpath d='M4 7h22v2H4V7zm0 7h22v2H4v-2zm0 7h22v2H4v-2z'/%3E%3C/svg%3E");
+          border-color: rgb(255, 255, 255);
       }
   
       .green-bg .nav-link {
           font-size: 1rem;
-          font-weight: 500;
-          color: white !important;
+          font-weight: 800;
+          color: green !important;
           margin-right: 15px;
           transition: all 0.3s ease;
           text-transform: capitalize;
@@ -60,10 +56,11 @@
   
       .green-bg .nav-link:hover, 
       .green-bg .nav-link.active {
-          color: rgb(255, 255, 255) !important;
+          color: grey !important;
           background-color: rgba(255, 255, 255, 0.2);
           border-radius: 5px;
           padding: 8px 15px;
+          box-shadow: inset;
       }
   
       .green-bg .btn {
@@ -106,12 +103,12 @@
               <nav class="navbar navbar-expand-lg navbar-light">
                   <div class="container-fluid">
                       <!-- Brand Logo -->
-                      <a class="navbar-brand" href="#">
-                          BrandName
-                      </a>
+                      <a class="logo" href="#">
+                        <img src="{% static 'images/abhaya_logo.png' %}" alt="BrandName Logo" height="70" style="margin-left: 20%;">
+                    </a>
                       <!-- Navbar Toggler -->
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: green;">
+                          <span class="navbar-toggler-icon" ></span>
                       </button>
                       <!-- Navbar Links -->
                       <div class="collapse navbar-collapse" id="navbarNav">
@@ -123,17 +120,31 @@
                                   <a class="nav-link" href="{% url 'about' %}">About</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">Doctor</a>
-                              </li>
+                                <a class="nav-link" href="">Treatment</a>
+                            </li>
+                            <li class="nav-item">
+                              {% if user.is_authenticated and user.is_superuser %}
+                                <a class="nav-link" href="{% url 'doctor' %}">Doctor Dashboard</a>
+                              {% endif %}
+                            </li>
+                            
+                            
                               <li class="nav-item">
                                 <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
                               </li>
+                              
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">Testimonial</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="btn" href="#" role="button">Login</a>
-                              </li>
+                                {% if user.is_authenticated %}
+                                    <form method="POST" action="{% url 'logout' %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn" role="button">Logout</button>
+                                    </form>
+                                {% else %}
+                                    <a class="btn" href="{% url 'login' %}" role="button">Login</a>
+                                {% endif %}
+                            </li>
+                            
+                              
                           </ul>
                       </div>
                   </div>
@@ -149,7 +160,9 @@
         body {
           margin: 0;
           font-family: Arial, sans-serif;
+          
         }
+
     
         footer {
           background: rgb(49, 86, 49);
